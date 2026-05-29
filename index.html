@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Zahra Bariza | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:
+    radial-gradient(circle at top left, #1e293b, #282f3f 40%),
+    linear-gradient(to bottom, #020617, #0f172a);
+    color:#e2e8f0;
+    line-height:1.7;
+}
+
+header{
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(15,23,42,0.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.hamburger{
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+    gap:5px;
+}
+
+.hamburger span{
+    width:25px;
+    height:3px;
+    background:white;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+.logo{
+    font-size:1.3rem;
+    font-weight:700;
+    color:white;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#cbd5e1;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+.hero{
+    min-height:85vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:80px 8%;
+    background:
+    linear-gradient(
+        rgba(17,24,39,0.88),
+        rgba(17,24,39,0.92)
+    ),
+    url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content h1{
+    font-size:3.2rem;
+    margin-bottom:10px;
+    color:white;
+}
+
+.hero-content p{
+    font-size:1.1rem;
+    color:#cbd5e1;
+    margin-bottom:30px;
+}
+
+.hero-btn{
+    display:inline-block;
+    padding:12px 28px;
+    background:#38bdf8;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    transition:0.3s;
+    font-weight:600;
+}
+
+.hero-btn:hover{
+    background:#0ea5e9;
+    transform:translateY(-3px);
+}
+
+.container{
+    max-width:1150px;
+    margin:60px auto;
+    padding:45px;
+    background:#111827;
+    border-radius:24px;
+    display:flex;
+    gap:50px;
+    align-items:center;
+    box-shadow:0 10px 40px rgba(0,0,0,0.35);
+}
+
+.profile-wrapper{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.profile-img{
+    width:320px;
+    height:320px;
+    object-fit:cover;
+    border-radius:24px;
+    border:4px solid rgba(255,255,255,0.08);
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.content{
+    flex:1.5;
+}
+
+.content h2{
+    font-size:2rem;
+    margin-bottom:18px;
+    color:white;
+}
+
+.content p{
+    color:#cbd5e1;
+}
+
+.tab-menu{
+    display:flex;
+    gap:12px;
+    margin-bottom:25px;
+    flex-wrap:wrap;
+}
+
+.tab-btn{
+    padding:10px 20px;
+    border:none;
+    background:#1e293b;
+    color:#cbd5e1;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.tab-btn:hover{
+    background:#334155;
+}
+
+.tab-btn.active{
+    background:#38bdf8;
+    color:white;
+}
+
+.tab-content{
+    display:none;
+    animation:fade 0.3s ease;
+}
+
+.tab-content.active{
+    display:block;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+ul{
+    padding-left:20px;
+}
+
+li{
+    margin-bottom:10px;
+    color:#cbd5e1;
+}
+
+.contact{
+    max-width:1150px;
+    margin:40px auto 80px;
+    padding:40px;
+    background:#111827;
+    border-radius:24px;
+    text-align:left;
+}
+
+.contact h2{
+    margin-bottom:15px;
+    color:white;
+}
+
+.contact p{
+    color:#cbd5e1;
+}
+
+.contact-wrapper{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    align-items:flex-start;
+    flex-wrap:wrap;
+}
+
+.contact-info,
+.motivation{
+    flex:1;
+    min-width:250px;
+}
+
+.motivation p{
+    color:#cbd5e1;
+}
+
+.contact{
+    max-width:1150px;
+    margin:40px auto 80px;
+    padding:40px;
+    background:#111827;
+    border-radius:24px;
+    text-align:left;
+}
+
+.motivation{
+    margin-top:25px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.motivation p{
+    color:#94a3b8;
+    font-style:italic;
+}
+
+.content {
+    flex: 1.5;
+    text-align: left;
+}
+
+.tab-content {
+    display: none;
+    animation: fade 0.3s ease;
+    text-align: left; 
+}
+
+
+@media (max-width: 768px){
+    
+    .container {
+        padding: 30px 20px; 
+        margin: 30px 15px;
+    }
+
+    .content {
+        width: 100%;
+        text-align: left; 
+    }
+
+    .tab-content h2 {
+        text-align: left; 
+    }
+
+
+    header{
+        padding:18px 8%;
+        flex-direction:row;
+    }
+
+    .logo{
+        font-size:1.2rem;
+    }
+
+    .hamburger{
+        display:flex;
+    }
+
+    nav{
+        position:absolute;
+        top:75px;
+        right:8%;
+        background:#111827;
+        width:200px;
+        border-radius:14px;
+        overflow:hidden;
+        max-height:0;
+        opacity:0;
+        transition:0.3s ease;
+        box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    nav.active{
+        max-height:300px;
+        opacity:1;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:0;
+    }
+
+    nav ul li{
+        border-bottom:1px solid rgba(255,255,255,0.06);
+    }
+
+    nav ul li:last-child{
+        border-bottom:none;
+    }
+
+    nav a{
+        display:block;
+        padding:15px 20px;
+    }
+
+    .hero{
+        min-height:70vh;
+        text-align:left;
+        justify-content:flex-start;
+    }
+
+    .hero-content h1{
+        font-size:2.2rem;
+    }
+
+    .container{
+        flex-direction:column;
+        text-align:left;
+        padding:30px 24px;
+        margin:30px 20px;
+    }
+
+    .profile-wrapper{
+        width:100%;
+    }
+
+    .profile-img{
+        width:220px;
+        height:220px;
+    }
+
+    .content{
+        width:100%;
+    }
+
+    .content h2{
+        text-align:left;
+    }
+
+    .tab-menu{
+        justify-content:flex-start;
+    }
+
+    .contact{
+        margin:30px 20px 60px;
+        text-align:left;
+    }
+}
+
+.motiv-name{
+    margin-top:12px;
+    color:#ffffff64;
+    font-weight:600;
+    font-size:0.95rem;
+}
+
+.footer{
+    text-align:center;
+    padding:20px;
+    color:#94a3b8;
+    font-size:0.9rem;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    
+    <div class="logo">Z.portfol</div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav id="nav-menu">
+    <ul>
+        <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="javascript:void(0)" onclick="goToCertificates()">Certificates</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+    </ul>
+</nav>
+</header>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+        <h1>Hi!<br>I'm Zahra Alilatul Bariza</h1>
+
+        <p>
+            IT Enthusiast • AI Web Designer 
+        </p>
+
+        <a href="#about" class="hero-btn">
+            Explore More
+        </a>
+    </div>
+
+</section>
+
+<section class="container" id="about">
+
+    <div class="profile-wrapper">
+        <img src="formal.jpg" alt="Zahra" class="profile-img">
+    </div>
+
+    <div class="content">
+
+        <div class="tab-menu">
+            <button class="tab-btn active" onclick="showTab('tab-about', this)">About</button>
+            <button class="tab-btn" onclick="showTab('tab-skills', this)">Skills</button>
+            <button class="tab-btn" onclick="showTab('tab-experience', this)">Experience</button>
+            <button class="tab-btn" onclick="showTab('tab-certificates', this)">Certificates</button> 
+        </div>
+
+        
+
+        <div id="tab-about" class="tab-content active">
+
+            <h2>About Me</h2>
+
+            <p>
+                I graduated from Budi Mulia Vocational School (SMKS) majoring in Computer and Network Engineering.
+                During my studies, I actively developed my skills in operating system installation and computer network configuration.
+                Experiences through school projects and internships have strengthened my practical knowledge and collaboration skills.
+                I currently intend to pursue higher education at Asia Cyber ​​University to deepen my knowledge and expertise in information technology.
+            </p>
+
+        </div>
+
+
+        <div id="tab-skills" class="tab-content">
+
+            <h2>My Skills</h2>
+
+            <ul>
+                <li>Languages: Indonesian (Native), English (Intermediate)</li>
+                <li>Web Development: HTML, CSS, JavaScript</li>
+                <li>Network Technician & AI Web Desaigner</li>
+                <li>Photographer & Videographer</li>
+                <li>Content Writing & Documentacion</li>
+            </ul>
+
+        </div>
+        
+
+        <div id="tab-experience" class="tab-content">
+
+            <h2>My Experience</h2>
+
+            <h3>
+                Internship, PT.BKU
+            </h3>
+            <h4>Departement Procurement</h4>
+            <h5>
+                Duration: 4 month
+            </h5>
+
+            <br>
+
+            <li>Administration & Documentation: 
+                Manage important documents such as Purchase Requisition (PR), Purchase Order (PO), vendor contracts, to processing invoices and bills to the finance team.
+            </li>
+            <li>
+                Report Creation: 
+                Create price comparison tables or shipping statuses and record stock or inventory availability.
+            </li>
+            <br>
+
+            <h3>
+                Internship, Bank BTN
+            </h3>
+            <h4>Document Section</h4>
+            <h5>
+                Duration: 2 month
+            </h5>
+
+            <br>
+
+            <li>A Digitization & System Upload: 
+                Scanning customer documents that have entered into credit agreements and uploading them to BTN's internal portal.
+            </li>
+            <li>
+                Physical Archiving: 
+                Storing, organizing, and securing original customer documents (such as property certificates and credit agreements) in a safe or special storage room.
+            </li>
+
+        </div>
+
+        <div id="tab-certificates" class="tab-content">
+                <h2>Certificates</h2>
+                    <ul>
+                        <li>
+                            <strong>BKU Internship Certificate</strong> - 
+                            <a href="Sertifikat PKL BKU.pdf" target="_blank" style="color: #38bdf8;">Lihat Sertifikat (PDF)</a>
+                        </li>
+                        <li>
+                            <strong>Bank BTN Internship Certificate</strong> - 
+                            <a href="Sertifikat PKL Bank BTN.pdf" target="_blank" style="color: #38bdf8;">Lihat Sertifikat (PDF)</a>
+                        </li>
+                        <li>
+                            <strong>Certificate of Seminar</strong> - 
+                            <a href="Sertifikat Seminar.pdf" target="_blank" style="color: #38bdf8;">Lihat Sertifikat (PDF)</a>
+                        </li>
+                        <li>
+                            <strong>Certificate of Webinar</strong> - 
+                            <a href="Sertifikat Webinar.pdf" target="_blank" style="color: #38bdf8;">Lihat Sertifikat (PDF)</a>
+                        </li>
+                    </ul>
+        </div>
+        
+    </div>
+
+    
+
+    </section>
+
+
+    <section class="contact" id="contact">
+    <div class="contact-wrapper">
+        <div class="contact-info">
+            <h2>Contact</h2>
+            
+            <ul style="list-style: none; margin-top: 15px;">
+                <li style="margin-bottom: 10px;">📍 Jl. Cipinang Asem, No. 33, East Jakarta, Indonesia</li>
+                <li style="margin-bottom: 10px;">✉️ <a href="mailto:zarraven06@gmail.com" style="color: #38bdf8; text-decoration: none;">zarraven06@gmail.com</a></li>
+                <li style="margin-bottom: 10px;">📞 <a href="tel:+6281387291270" style="color: #38bdf8; text-decoration: none;">+62 813-8729-1270</a></li>
+                <li style="margin-bottom: 10px;">🔗 <a href="https://www.linkedin.com/in/zahra-bariza-8b52b0410" target="_blank" style="color: #38bdf8; text-decoration: none;">LinkedIn Profile</a></li>
+            </ul>
+        </div>
+
+        <div class="motivation">
+            <h2>zarraven</h2>
+            <p>
+                “Keep learning, keep growing, and never be afraid
+                to create something extraordinary from small beginnings.”
+            </p>
+            <h4 class="motiv-name">
+                — Zahra Alilatul Bariza | 2026
+            </h4>
+        </div>
+    </div>
+</section>
+
+<script>
+
+function showTab(tabId, buttonElement){
+
+    const contents = document.querySelectorAll('.tab-content');
+
+    contents.forEach(content => {
+        content.classList.remove('active');
+    });
+
+    const buttons = document.querySelectorAll('.tab-btn');
+
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    document.getElementById(tabId).classList.add('active');
+
+    buttonElement.classList.add('active');
+}
+function goToCertificates() {
+
+    toggleMenu();
+
+    const certButton = document.querySelector('.tab-btn[onclick="showTab(\'tab-certificates\', this)"]');
+    showTab('tab-certificates', certButton);
+
+    document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+}
+
+</script>
+
+<script>
+
+function toggleMenu(){
+    document.getElementById("nav-menu")
+    .classList.toggle("active");
+}
+
+</script>
+<footer class="footer">
+    <p>© 2026 Copyright: Zahra Alilatul Bariza</p>
+</footer>
+</body>
+</html>
+
+
